@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom right, red, black);
+    color: white;
+    }
+
+
+#title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#player-container {
+    display: flex;
+    background-color: #000000;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#player-container-male,
+#player-container-female {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.card {
+    border: 2px solid black;
+    border-radius: 5px 5px 0px 0px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: black;
+}
+.card:hover {
+    box-shadow: 0 0 10px rgba(109, 2, 2, 0.2);
+}
+
+.card p {
+    display: none;
+    margin-top: 1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #000000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close-button {
+    color: #ff0000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#back-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#back-button:hover {
+    background-color: #cc0000;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.centered img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS Detalhes */
+
+#player-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#player-details img {
+    width: 40%;
+    height: auto;
+}
+
+#player-image-name-position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+#player-image-name-position img {
+    width: 350px;
+    height: auto;
+}
+
+
+
+#player-details div {
+    width: 55%;
+    text-align: left;
+}
+
+.info-black {
+    color: #000000;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 300px; /* Ajuste isso para mover a logo mais para a direita */
+    width: 100px; /* Ajuste isso para o tamanho desejado */
+    height: auto;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    #player-container-male,
+    #player-container-female {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #player-container-male,
+    #player-container-female {
+      grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    #player-container-male,
+    #player-container-female {
+      grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (min-width: 1201px) {
+    #player-container-male,
+    #player-container-female {
+      grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #player-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #player-details img,
+    #player-details div {
+        width: 100%;
+    }
+
+    #player-details div {
+        text-align: center;
+    }
+}
